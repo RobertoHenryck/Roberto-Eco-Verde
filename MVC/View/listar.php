@@ -2,6 +2,8 @@
 require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
 require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
+session_start();
+
 $Controller = new Controller($pdo);
 $Consumos = $Controller->listarConsumo();
 ?>
@@ -30,7 +32,10 @@ $Consumos = $Controller->listarConsumo();
                         <th>Consumo do Servidor (kWh)</th>
                         <th>Consumo de Iluminação (kWh)</th>
                         <th>Consumo de Climatização (kWh)</th>
+                        <?php
+                        if($_SESSION['usuario_tipo']=='admin' ){?>
                         <th>Consumo de Equipamentos (kWh)</th>
+                        <?php } ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +47,8 @@ $Consumos = $Controller->listarConsumo();
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_iluminacao']); ?></td>
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_climatizacao']); ?></td>
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_equipamentos']); ?></td>
+                          
+
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -58,4 +65,4 @@ $Consumos = $Controller->listarConsumo();
     </div>
 </body>
 
-</html>
+</html> 

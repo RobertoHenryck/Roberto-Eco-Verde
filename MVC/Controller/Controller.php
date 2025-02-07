@@ -10,15 +10,26 @@ class Controller
         $this->Model = new Model($pdo);
     }
 
-    public function cadastrarconsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos)
+    public function cadastrarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos)
     {
-        return $this->Model->cadastrarconsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos);
+        return $this->Model->cadastrarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos);
     }
 
-    public function listarconsumo()
+    public function listarConsumo()
     {
-        return $this->Model->listarconsumo();
+        return $this->Model->listarConsumo();
     }
-    
-    
+
+    public function editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id)
+    {
+        // Corrigi os parâmetros, que estavam com nomes errados (ex: $nome, $data_hora, etc.).
+        $this->Model->editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id);
+    }
+
+    public function deletarConsumo($id)
+    {
+        return $this->Model->deletarConsumo($id);
+    }
+
+   
 }
