@@ -16,12 +16,6 @@ $Consumos = $Controller->listarConsumo();
 </head>
 
 <body>
-    <div class="login"> 
-        <?php
-        if (isset($_COOKIE['Usuario'])) {
-            echo "Bem vindo(a)! $_COOKIE[Usuario]!";
-        }
-        ?>
     </div>
 
     <h1>Lista de Consumo Registrado</h1>

@@ -19,8 +19,5 @@ class Controller
     {
         return $this->Model->listarconsumo();
     }
-    public function logIn($nome, $senha)
-    {
-        return $this->Model->logIn($nome, $senha);
-    }
+    
 }
