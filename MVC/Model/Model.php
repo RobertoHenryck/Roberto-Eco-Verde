@@ -25,8 +25,15 @@ class Model
 
     public function listarconsumo()
     {
-        $sql = "SELECT * FROM viagem";
+        $sql = "SELECT * FROM cadastro_consumo  ";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function logIn($nome, $senha)
+    {
+        $sql = "SELECT * FROM cadastro WHERE nome = ? AND senha = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$nome, $senha]);
+        return $stmt->fetchALL(PDO::FETCH_ASSOC);
     }
 }

@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '\config.php';
-require_once __DIR__ . '\Controller\Controller.php';
+require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
+require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
 $Controller = new Controller($pdo);
 
