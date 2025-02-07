@@ -1,29 +1,70 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário</title>
-</head>
-<body>
-    <h1>Cadastrar Novo Usuário</h1>
+<?php
+session_start();
+require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; // Arquivo de conexão com o banco de dados
 
-    <form action="cadastrar.php" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        <br><br>
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $tipo = $_POST['tipo']; // Tipo de usuário: 'admin' ou 'usuario'
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+    // Verificar se o email já está cadastrado
+    $sql = "SELECT * FROM usuarios WHERE email = :email LIMIT 1";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        <br><br>
+    if ($stmt->rowCount() > 0) {
+        $erro = "Este email já está cadastrado!";
+    } else {
+        // Criptografar a senha
+        $senha_criptografada = password_hash($senha, PASSWORD_DEFAULT);
 
-        <button type="submit">Cadastrar</button>
-    </form>
+        // Inserir o novo usuário no banco de dados
+        $sql = "INSERT INTO usuarios (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senha_criptografada);
+        $stmt->bindParam(':tipo', $tipo);
 
-    <p>Já tem uma conta? <a href="login.php">Faça login aqui</a></p>
-</body>
-</html>
+        if ($stmt->execute()) {
+            $_SESSION['usuario_nome'] = $nome;
+            $_SESSION['usuario_email'] = $email;
+            $_SESSION['usuario_tipo'] = $tipo;
+
+            // Redireciona para a página de login
+            header('Location: login.php');
+            exit;
+        } else {
+            $erro = "Erro ao cadastrar o usuário. Tente novamente!";
+        }
+    }
+    
+}
+
+?>
+
+<!-- Formulário de cadastro -->
+<form method="POST">
+    <h2>Cadastro de Usuário</h2>
+
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="senha">Senha:</label>
+    <input type="password" name="senha" id="senha" required>
+
+    <label for="tipo">Tipo de Usuário:</label>
+    <select name="tipo" id="tipo" required>
+        <option value="usuario">Usuário Comum</option>
+        <option value="admin">Administrador</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<?php if (isset($erro)) echo "<p>$erro</p>"; ?>
