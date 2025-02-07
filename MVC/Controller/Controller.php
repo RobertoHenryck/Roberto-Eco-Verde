@@ -20,4 +20,5 @@ class Controller
         return $this->Model->listarconsumo();
     }
     
+    
 }
