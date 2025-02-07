@@ -5,7 +5,7 @@ require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller
 session_start();
 
 $Controller = new Controller($pdo);
-$Consumos = $Controller->listarConsumo();
+$Consumos = $Controller->listarConsumo($_SESSION['usuario_id']);
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +18,11 @@ $Consumos = $Controller->listarConsumo();
 </head>
 
 <body>
-    </div>
 
+    <?php if (isset($_SESSION['usuario_tipo'])) {
+        echo "Bem vindo(a)! $_SESSION[usuario_tipo]    "  . $_SESSION['usuario_nome'] . '!';
+    }
+    ?>
     <h1>Lista de Consumo Registrado</h1>
 
     <div>
@@ -33,10 +36,12 @@ $Consumos = $Controller->listarConsumo();
                         <th>Consumo de Iluminação (kWh)</th>
                         <th>Consumo de Climatização (kWh)</th>
                         <?php
-                        if($_SESSION['usuario_tipo']=='admin' ){?>
-                        <th>Consumo de Equipamentos (kWh)</th>
+
+                        if ($_SESSION['usuario_tipo'] == 'admin') { ?>
+                            <th>Consumo de Equipamentos (kWh)</th>
                         <?php } ?>
                     </tr>
+
                 </thead>
                 <tbody>
                     <?php foreach ($Consumos as $Consumo): ?>
@@ -47,16 +52,18 @@ $Consumos = $Controller->listarConsumo();
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_iluminacao']); ?></td>
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_climatizacao']); ?></td>
                             <td><?php echo htmlspecialchars($Consumo['consumo_de_equipamentos']); ?></td>
-                          
+
 
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="botoes">
-                <a href="Organizador de Consumo/Cadastrar_Consumo.php">Cadastrar Consumo</a>
+                <a href="CadastrarConsumo.php">Cadastrar Consumo</a>
                 <br>
-                <a href="pagina_de_perfil.php">Página de Perfil</a>
+                <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
+                    <a href="editar.php">Editar</a>
+                <?php } ?>
                 <br>
             </div>
         <?php else: ?>
@@ -65,4 +72,4 @@ $Consumos = $Controller->listarConsumo();
     </div>
 </body>
 
-</html> 
+</html>

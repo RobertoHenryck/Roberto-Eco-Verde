@@ -2,22 +2,24 @@
 require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
 require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
+session_start();
 $Controller = new Controller($pdo);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $consumo_de_estacao = $_POST['consumo_de_estacao'];
     $consumo_do_servidor = $_POST['consumo_do_servidor'];
     $consumo_de_iluminacao = $_POST['consumo_de_iluminacao'];
     $consumo_de_climatizacao = $_POST['consumo_de_climatizacao'];
     $consumo_de_equipamentos = $_POST['consumo_de_equipamentos'];
+    $id_usuario = $_SESSION['usuario_id']; // Obtendo o ID do usuário
 
     $resultado = $Controller->cadastrarConsumo(
-        consumo_de_estacao: $consumo_de_estacao, 
-        consumo_do_servidor: $consumo_do_servidor, 
-        consumo_de_iluminacao: $consumo_de_iluminacao, 
-        consumo_de_climatizacao: $consumo_de_climatizacao, 
-        consumo_de_equipamentos: $consumo_de_equipamentos
+        $consumo_de_estacao, 
+        $consumo_do_servidor, 
+        $consumo_de_iluminacao, 
+        $consumo_de_climatizacao, 
+        $consumo_de_equipamentos, 
+        $id_usuario
     );
 
     if ($resultado) {
@@ -63,17 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br>
             <input type="text" name="consumo_de_equipamentos" required />
             <br>
-            <br>
 
             <button type="submit">Cadastrar Consumo</button>
-
         </form>
 
         <br>
 
         <a href="../index.php">Voltar</a>
     </center>
-
 </body>
 
 </html>

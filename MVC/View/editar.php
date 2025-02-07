@@ -7,11 +7,28 @@ $Controller = new Controller($pdo);
 
 $Consumos = $Controller->listarConsumo(); // Alterando o nome da função para listarConsumo
 
-if (isset($_POST['update_consumo_de_estacao']) && isset($_POST['update_consumo_do_servidor']) && isset($_POST['update_consumo_de_iluminacao']) && isset($_POST['update_consumo_de_climatizacao']) && isset($_POST['update_consumo_de_equipamentos']) && isset($_POST['id'])) {
-    // Alterando os nomes dos parâmetros para consumo
-    $Controller->editarConsumo($_POST['update_consumo_de_estacao'], $_POST['update_consumo_do_servidor'], $_POST['update_consumo_de_iluminacao'], $_POST['update_consumo_de_climatizacao'], $_POST['update_consumo_de_equipamentos'], $_POST['id']);
+if (
+    isset($_POST['update_consumo_de_estacao']) &&
+    isset($_POST['update_consumo_do_servidor']) &&
+    isset($_POST['update_consumo_de_iluminacao']) &&
+    isset($_POST['update_consumo_de_climatizacao']) &&
+    isset($_POST['update_consumo_de_equipamentos']) &&
+    isset($_POST['id']) &&
+    isset($_POST['update_id_usuario']) // Adicionando id_usuario
+) {
+    // Chamando a função com o novo parâmetro id_usuario
+    $Controller->editarConsumo(
+        $_POST['update_consumo_de_estacao'],
+        $_POST['update_consumo_do_servidor'],
+        $_POST['update_consumo_de_iluminacao'],
+        $_POST['update_consumo_de_climatizacao'],
+        $_POST['update_consumo_de_equipamentos'],
+        $_POST['id'],
+        $_POST['update_id_usuario'] // Novo parâmetro
+    );
 
     header("Location: ../index.php");
+    exit;
 }
 ?>
 
@@ -30,14 +47,12 @@ if (isset($_POST['update_consumo_de_estacao']) && isset($_POST['update_consumo_d
             <h1>Editar Consumo</h1>
             <div>
 
-                <label for="">Seleciona o Consumo</label>
+                <label for="id">Seleciona o Consumo</label>
                 <br>
                 <select name="id">
-
                     <?php foreach ($Consumos as $Consumo): ?>
                         <option value="<?= $Consumo['id']; ?>"><?= "$Consumo[id] - $Consumo[consumo_de_estacao]"; ?></option>
                     <?php endforeach; ?>
-
                 </select>
 
                 <br>
@@ -51,9 +66,11 @@ if (isset($_POST['update_consumo_de_estacao']) && isset($_POST['update_consumo_d
                 <br>
                 <input type="text" name="update_consumo_de_equipamentos" placeholder="Consumo de Equipamentos">
                 <br>
+                <input type="text" name="update_id_usuario" placeholder="ID do Usuário"> <!-- Novo campo -->
+                <br>
                 <button type="submit">Editar</button>
                 <br>
-                <a href="../index.php">Voltar</a>
+                <a href="/MVC/listar.php">Voltar</a>
             </div>
         </form>
     </center>
