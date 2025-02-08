@@ -1,7 +1,7 @@
 <?php
 
-require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
-require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
+require_once 'C:\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
+require_once 'C:\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
 $Controller = new Controller($pdo);
 
@@ -24,7 +24,7 @@ if (
         $_POST['update_consumo_de_climatizacao'],
         $_POST['update_consumo_de_equipamentos'],
         $_POST['id'],
-        $_POST['update_id_usuario'] // Novo parâmetro
+        $_POST['updateid_usuario'] // Novo parâmetro
     );
 
     header("Location: ../index.php");
