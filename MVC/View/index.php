@@ -159,6 +159,12 @@ button:hover {
             margin: 50px;
         }
     </style>
+    <script>
+       
+        window.onload = function() {
+            alert("Por favor, coloque sua conta!");
+        }
+    </script>
 </head>
 <body>
     
