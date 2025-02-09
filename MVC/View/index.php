@@ -109,18 +109,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-top: 20px;
             text-align: center; 
         }
-        button{
-            display:flex;
-            align-items: center;    
-            width: 400px;
-            font-family: 'Josefin Sans';
-            background-color: #40916c;
-            color: #1b4332;
-            font-size: 20px;
-            border:none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
+        button {
+    display: flex;
+    align-items: center;    
+    width: 400px;
+    font-family: 'Josefin Sans';
+    background-color: #40916c;
+    color: #1b4332;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;  
+}
+
+
+button:hover {
+    background-color: #2d6a4f;  
+    color: black;  
+}
+.botoes{
+    display:flex;
+    justify-content: center;    
+    width: 400px;
+    margin:0 auto;
+}
+
 
         p{
             display: flex;  
@@ -139,11 +153,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color:#40916c;
         }
 
-        /* Remover completamente a borda de foco invisível no link */
-        a:focus {
-            outline: none;  /* Remove o outline do foco no link */
-            border: none;   /* Remove qualquer borda que possa aparecer */
-        }
 
         .logo{
             width:700px;
@@ -171,12 +180,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="botao">
             <button type="submit">Entrar</button>
         </div>
-       <div class="botoes">
-            
-<a href="CadastrarUsuario.php">Cadastrar</a>
-
-
- </div>           
+      <div class="botoes">
+    <p><a href="CadastrarUsuario.php">Não tem uma conta? Cadastre-se aqui</a></p>
+</div>
+       
         </form>
  </div>
 
