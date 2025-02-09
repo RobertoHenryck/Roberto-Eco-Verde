@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['usuario_tipo'] = $usuario['tipo']; // 'admin' ou 'usuario'
 
             // Redirecionar para a página inicial
-            header('Location: PáginaInicial.php');
+            header('Location:PáginaInicial.php');
             exit;
         } else {
             $erro = "Senha incorreta!";
@@ -33,11 +33,157 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap');
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 180px;
+            font-family: 'Josefin Sans';
+            background-color: #081c15;
+        }
+        .conteudo{
+            display: flex;  
+        }
 
-<!-- Formulário de login -->
-<form method="POST">
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="senha" placeholder="Senha" required>
-    <button type="submit">Entrar</button>
-</form>
-<?php if (isset($erro)) echo $erro; ?>
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            display:flex;
+            flex-direction: column;
+        }
+        .inputs{
+            background-color: #1b4332;
+            display: flex;
+            width:600px;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+            margin:100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+        input{
+            width: 550px;
+            background-color:#2d6a4f;
+            color:black;
+            border:none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        img{
+            width: 600px;
+            height:300px;
+        }
+        h2{
+            color:#40916c;
+            width: 800px;
+            font-size:50px;
+            display:flex;
+        }
+        h2::first-letter{
+            font-size:50px;
+        }
+        h1{
+            display:flex;
+            justify-content: center;
+            font-size: 30px;
+            color:#40916c;
+        }
+        
+        .botao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center; 
+        }
+        button{
+            display:flex;
+            align-items: center;    
+            width: 400px;
+            font-family: 'Josefin Sans';
+            background-color: #40916c;
+            color: #1b4332;
+            font-size: 20px;
+            border:none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        p{
+            display: flex;  
+            justify-content: start;
+            font-size: 20px;
+            color:#40916c;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top:30px;
+            font-size: 20px;
+            color:#40916c;
+        }
+
+        /* Remover completamente a borda de foco invisível no link */
+        a:focus {
+            outline: none;  /* Remove o outline do foco no link */
+            border: none;   /* Remove qualquer borda que possa aparecer */
+        }
+
+        .logo{
+            width:700px;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="conteudo">
+    <div class="logo">
+              <h2>
+        Faça login no nosso site para acessar o conteúdo exclusivo!
+    </h2>
+            <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="Logo">
+        </div>
+  
+        <div class="inputs">
+        <form method="POST">
+ <h1>LOGIN</h1>
+ <p>E-mail</p>
+            <input type="email" name="email" placeholder="Email" required>
+            <p>Senha</p>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <div class="botao">
+            <button type="submit">Entrar</button>
+        </div>
+       <div class="botoes">
+            
+<a href="CadastrarUsuario.php">Cadastrar</a>
+
+
+ </div>           
+        </form>
+ </div>
+
+  </div>
+        </div>
+  
+
+    <?php if (isset($erro)) echo $erro; ?>
+</body>
+</html>

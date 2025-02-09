@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['usuario_tipo'] = $tipo;
 
             // Redireciona para a página de login
-            header('Location: login.php');
+            header('Location: index.php');
             exit;
         } else {
             $erro = "Erro ao cadastrar o usuário. Tente novamente!";
@@ -44,10 +44,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
 
-<!-- Formulário de cadastro -->
-<form method="POST">
-    <h2>Cadastro de Usuário</h2>
+<div class="conteudo">
+
+
+
+
+
+
+
+    <form method="POST">
+    <h2>o</h2>
 
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required>
@@ -64,7 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <option value="admin">Administrador</option>
     </select>
 
+
     <button type="submit">Cadastrar</button>
+
 </form>
+</div>
+</body>
+</html>
+
+<!-- Formulário de cadastro -->
 
 <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
