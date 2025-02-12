@@ -106,7 +106,7 @@
 
             <div class="nav2">
                 <a href="CadastrarConsumo.php">Registrar Consumo</a>
-                <a href="editar.php">Página Inicial</a>
+                <a href="PáginaInicial.php">Página Inicial</a>
 
                 <?php if (isset($_SESSION['usuario_id'])): ?>
                     <a href="?logout=true">Sair</a>

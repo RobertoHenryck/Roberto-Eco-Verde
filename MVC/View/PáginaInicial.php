@@ -39,9 +39,9 @@ if (isset($_GET['logout'])) {
             justify-content: space-around;
             background-color: #1b4332;
             height: 100px;
-            gap: 640px;
+            gap: 900px;
             align-items: center;
-            width: 100%;
+            
         }
 
         a {
@@ -149,7 +149,7 @@ if (isset($_GET['logout'])) {
         @media screen and (max-width: 1800px) {
 
             .navbar {
-                gap: 200px;
+                gap: 500px;
 
             }
         }

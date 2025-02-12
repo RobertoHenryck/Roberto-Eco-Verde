@@ -3,6 +3,13 @@ require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
 require_once  'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
 session_start();
+
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
+    exit;
+}
 $Controller = new Controller($pdo);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $consumo_de_equipamentos,
         $id_usuario
     );
+    
 
     if ($resultado) {
         header('Location: PáginaInicial.php');
@@ -158,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="nav2">
             <a href="listar.php">Meu Consumo</a>
-            <a href="editar.php">Página Inicial</a>
+            <a href="PáginaInicial.php">Página Inicial</a>
 
             <?php if (isset($_SESSION['usuario_id'])): ?>
                 <a href="?logout=true">Sair</a>
