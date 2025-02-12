@@ -73,6 +73,9 @@ if (isset($_GET['logout'])) {
     .conteudo {
         padding: 20px;
     }
+    li{
+        font-size: 25px;
+    }
 
     h2 {
         color: black;
@@ -113,7 +116,7 @@ if (isset($_GET['logout'])) {
     }
 
     .texto1 p {
-        font-size: 18px;
+        font-size: 25px;
         text-align: justify;
         color: #333;
     }
@@ -161,20 +164,23 @@ if (isset($_GET['logout'])) {
 
 <div class="conteudo">
    <div class="fundo"> 
-       <h1>- Sobre Nós</h1>
+   <h1>🌱 TI Verde: Sustentabilidade na Tecnologia</h1>
    </div>
 
    <div class="texto1">
-       <p>O nosso site foi desenvolvido com o objetivo de fornecer uma plataforma prática e eficiente para que empresas e indivíduos possam monitorar e gerenciar seu consumo energético de forma consciente e sustentável. Em um cenário onde a preservação ambiental e a otimização dos recursos são cada vez mais essenciais, nosso sistema oferece uma ferramenta poderosa para o controle do consumo de energia.</p>
+   
+       <p>A TI Verde (ou Green IT) é um conceito que busca tornar o uso da tecnologia mais sustentável, reduzindo impactos ambientais, otimizando o consumo de energia e promovendo a reutilização de recursos tecnológicos. Empresas e governos estão cada vez mais investindo em práticas sustentáveis para minimizar o consumo excessivo de energia e o descarte inadequado de resíduos eletrônicos.</p>
    </div>
 
     <div class="texto1"><ul>
-    <h1>Principais funcionalidades:</h1>
-        <li><strong>Cadastro de Consumo:</strong> Permite que você registre de maneira simples e rápida o consumo de energia de sua empresa ou residência, garantindo um controle detalhado.</li>
-        <li><strong>Consulta de Consumo:</strong> Através da plataforma, é possível consultar e visualizar o histórico de consumo de energia, o que ajuda a identificar padrões e a adotar práticas mais eficientes.</li>
-        <li><strong>Edição de Consumo:</strong> Caso haja a necessidade de ajustes nos dados cadastrados, nossa plataforma oferece uma funcionalidade para editar as informações com facilidade.</li>
-        <li><strong>Perfil Personalizado:</strong> Seu consumo de energia fica visível apenas para você, garantindo a privacidade e o controle total sobre os dados registrados.</li>
-    </ul>
+    <h1>✅ Por que a TI Verde é Importante?</h1>
+    <br>
+        <p><strong>A revolução digital</strong> trouxe inúmeros benefícios, mas também aumentou o consumo de energia e a produção de lixo eletrônico. Alguns números mostram a urgência da adoção de TI Verde:</p>
+  <br>
+        <li> Data centers consomem cerca de 1% da eletricidade mundial.</li>
+    <li> A produção de um único laptop pode gerar até 120 kg de CO₂.</li>
+    <li> A cada ano, o mundo gera mais de 50 milhões de toneladas de lixo eletrônico.</li>
+    <li> Cerca de 20% dos resíduos eletrônicos são reciclados corretamente – o restante é descartado de forma inadequada.</li>
     
 
     <p>Além disso, nosso site está integrado com práticas e diretrizes do conceito de <strong>TI Verde</strong>, oferecendo uma abordagem focada na sustentabilidade, eficiência energética e redução de impactos ambientais.</p>
@@ -186,7 +192,7 @@ if (isset($_GET['logout'])) {
 </div>
 <footer>
     <div class="navbar">
-        <h3>ROBERTO ÉCO VERDE - Todos os direitos reservados</h3>
+        <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
         <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
     </div>
 

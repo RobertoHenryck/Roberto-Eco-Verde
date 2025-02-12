@@ -162,7 +162,7 @@ button:hover {
     <script>
        
         window.onload = function() {
-            alert("Por favor, coloque sua conta!");
+            alert("Para continuar, faça login em sua conta ou cadastre-se para acessar todas as funcionalidades.!");
         }
     </script>
 </head>

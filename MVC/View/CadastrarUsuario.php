@@ -84,6 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 10px;
             box-shadow: 0 0 10px black;
         }
+        option{
+            color: #1b4332;
+        }
         input,select {
             width: 550px;
             background-color: #2d6a4f;
