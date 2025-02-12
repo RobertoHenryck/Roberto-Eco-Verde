@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'C:\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; // arquivo de conexão com o banco de dados
+require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; // arquivo de conexão com o banco de dados
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
