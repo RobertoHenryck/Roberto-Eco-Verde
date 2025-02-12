@@ -166,7 +166,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #40916c;
         }
 
-
         .logo {
             width: 700px;
             margin: 50px;

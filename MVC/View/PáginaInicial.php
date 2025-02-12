@@ -82,7 +82,7 @@ if (isset($_GET['logout'])) {
 
         h2 {
             color: black;
-            font-size: 30px;
+            font-size: 20px;
         }
 
         h3 {
@@ -115,7 +115,7 @@ if (isset($_GET['logout'])) {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 80%;
+            width: 90%;
             margin: 20px auto;
         }
 
@@ -166,8 +166,7 @@ if (isset($_GET['logout'])) {
 
         <div class="nav2">
             <a href="CadastrarConsumo.php">Cadastrar Consumo</a>
-            <a href="listar.php">Listar meu Consumo</a>
-            <a href="editar.php">Editar Consumo</a>
+            <a href="listar.php">Meu Consumo</a>
 
             <?php if (isset($_SESSION['usuario_id'])): ?>
                 <a href="?logout=true">Sair</a>
@@ -196,6 +195,21 @@ if (isset($_GET['logout'])) {
                 <li> A cada ano, o mundo gera mais de 50 milhões de toneladas de lixo eletrônico.</li>
                 <li> Cerca de 20% dos resíduos eletrônicos são reciclados corretamente – o restante é descartado de forma inadequada.</li>
 
+                <div class="texto1">
+                    <h1>💡 Como Reduzir os Custos de Energia com a TI Verde?</h1>
+                    <p>A adoção de práticas de TI Verde pode ajudar empresas e usuários a economizar energia e reduzir o impacto ambiental. Aqui estão algumas sugestões:</p>
+                    <ul>
+                        <li>✅ Utilize servidores e computadores com certificação de eficiência energética.</li>
+                        <li>✅ Opte por fontes de energia renováveis para alimentar seus dispositivos.</li>
+                        <li>✅ Configure sistemas para o modo de economia de energia sempre que possível.</li>
+                        <li>✅ Adote a virtualização de servidores para reduzir o consumo de hardware físico.</li>
+                        <li>✅ Faça a manutenção regular de equipamentos para evitar desperdícios energéticos.</li>
+                        <li>✅ Invista em data centers ecologicamente corretos com melhor eficiência térmica.</li>
+                        <li>✅ Descarte corretamente equipamentos eletrônicos obsoletos, garantindo sua reciclagem.</li>
+                        <li>✅ Incentive o trabalho remoto para reduzir o consumo de energia nos escritórios.</li>
+                    </ul>
+                    <p>Com pequenas mudanças, podemos transformar a tecnologia em uma aliada do meio ambiente e ainda reduzir custos operacionais. 🌱💚</p>
+                </div>
 
                 <p>Além disso, nosso site está integrado com práticas e diretrizes do conceito de <strong>TI Verde</strong>, oferecendo uma abordagem focada na sustentabilidade, eficiência energética e redução de impactos ambientais.</p>
 

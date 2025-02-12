@@ -8,6 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = $_POST['senha'];
     $tipo = $_POST['tipo']; // Tipo de usuário
 
+    if (isset($_GET['logout'])) {
+        session_unset();
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    }
+
     // Verificar se o email já está cadastrado
     $sql = "SELECT * FROM usuarios WHERE email = :email LIMIT 1";
     $stmt = $pdo->prepare($sql);
