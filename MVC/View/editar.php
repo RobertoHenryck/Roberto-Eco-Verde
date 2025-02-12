@@ -5,7 +5,7 @@ require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller
 
 $Controller = new Controller($pdo);
 
-$Consumos = $Controller->listarConsumo(); // Alterando o nome da função para listarConsumo
+$Consumos = $Controller->listarConsumo($_POST);
 
 if (
     isset($_POST['update_consumo_de_estacao']) &&
@@ -14,9 +14,9 @@ if (
     isset($_POST['update_consumo_de_climatizacao']) &&
     isset($_POST['update_consumo_de_equipamentos']) &&
     isset($_POST['id']) &&
-    isset($_POST['update_id_usuario']) // Adicionando id_usuario
+    isset($_POST['update_id_usuario'])
 ) {
-    // Chamando a função com o novo parâmetro id_usuario
+
     $Controller->editarConsumo(
         $_POST['update_consumo_de_estacao'],
         $_POST['update_consumo_do_servidor'],
@@ -24,7 +24,7 @@ if (
         $_POST['update_consumo_de_climatizacao'],
         $_POST['update_consumo_de_equipamentos'],
         $_POST['id'],
-        $_POST['updateid_usuario'] // Novo parâmetro
+        $_POST['updateid_usuario']
     );
 
     header("Location: ../index.php");

@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -162,6 +163,58 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             width: 700px;
             margin: 50px;
         }
+
+        @media screen and (max-width: 1800px) {
+    body {
+         margin-top: -50px;
+    }
+
+    .conteudo {
+        display:flex;
+        
+        
+    }
+
+    .logo {
+        width: 100%; 
+        margin: 80px;
+    }
+
+    img {
+        width: 500px; 
+        height: auto;
+    }
+
+    .inputs, select{
+        width:450px;
+        align-items: center;
+        height: auto;
+        padding:20px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    button {
+        width: 90%; 
+    }
+
+    h2 {
+        font-size: 50px;
+        width: auto;
+    }
+
+    h1 {
+        font-size: 30px; 
+    }
+
+    p, a {
+        font-size: 18px; 
+    }
+}
+
+
     </style>
 </head>
 
@@ -189,7 +242,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p>Tipo de Usuário</p>
             <select name="tipo" required>
                 <option value="usuario">Usuário Comum</option>
-                <option value="admin">Administrador</option>
             </select>
 
             <div class="botao">
