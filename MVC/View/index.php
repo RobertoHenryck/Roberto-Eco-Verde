@@ -51,8 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin: 180px;
             font-family: 'Josefin Sans';
             background-color: #081c15;
-            overflow: hidden;
-
         }
 
         .conteudo {
@@ -81,8 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         input {
-            display: flex;
-            align-items: center;
             width: 550px;
             background-color: #2d6a4f;
             color: black;
@@ -103,7 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
         }
 
-
+        h2::first-letter {
+            font-size: 50px;
+        }
 
         h1 {
             display: flex;
@@ -116,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 20px;
             text-align: center;
         }
 
@@ -131,24 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            cursor: pointer;
         }
-
-
-        button:hover {
-            background-color: #2d6a4f;
-            color: black;
-        }
-
-        .botoes {
-            display: flex;
-            justify-content: center;
-            width: 400px;
-            margin: 0 auto;
-            
-        }
-
 
         p {
             display: flex;
@@ -168,58 +149,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #40916c;
         }
 
+        /* Remover completamente a borda de foco invisível no link */
+        a:focus {
+            outline: none;
+            /* Remove o outline do foco no link */
+            border: none;
+            /* Remove qualquer borda que possa aparecer */
+        }
+
         .logo {
             width: 700px;
             margin: 50px;
         }
 
-        @media screen and (max-width: 1800px) {
-            body {
-                margin: 20px;
-            }
-
-            .conteudo {
-                display: flex
-            }
-
-            .logo {
-                width: 120%;
-                margin: 80px;
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-            }
-
-            .inputs {
-                width: 90%;
-                height: auto;
-                padding: 20px;
-            }
-
-            input {
-                width: 90%;
-            }
-
-            button {
-                width: 90%;
-            }
-
-            h2 {
-                font-size: 40px;
-                width: auto;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            p,
-            a {
-                font-size: 18px;
-            }
+        .botoes {
+            display: flex;
+            justify-content: center;
         }
+
+        button {
+            display: flex;
+            align-items: center;
+            width: 400px;
+            font-family: 'Josefin Sans';
+            background-color: #40916c;
+            color: #1b4332;
+            font-size: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2d6a4f;
+            color: black;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+    
     </style>
     <script>
         window.onload = function() {

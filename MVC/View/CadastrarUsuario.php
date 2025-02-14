@@ -53,13 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Oswald:wght@200..700&display=swap');
-        
+
         body {
             display: flex;
             flex-direction: column;
@@ -70,17 +71,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #081c15;
             overflow: hidden;
         }
-        .conteudo{
-            display: flex;  
+
+        .conteudo {
+            display: flex;
         }
 
-        input, button, select {
+        input,
+        button,
+        select {
             padding: 10px;
             font-size: 16px;
             width: 200px;
             display: flex;
             flex-direction: column;
         }
+
         .inputs {
             background-color: #1b4332;
             display: flex;
@@ -92,10 +97,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 10px;
             box-shadow: 0 0 10px black;
         }
-        option{
-            color: #1b4332;
-        }
-        input,select {
+
+        input,
+        select {
             width: 550px;
             background-color: #2d6a4f;
             color: black;
@@ -103,10 +107,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         img {
             width: 600px;
             height: 300px;
         }
+
         h2 {
             color: #40916c;
             width: 800px;
@@ -120,18 +126,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 30px;
             color: #40916c;
         }
-        
+
         .botao {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
-            text-align: center; 
+            text-align: center;
         }
 
         button {
             display: flex;
-            align-items: center;    
+            align-items: center;
             width: 400px;
             font-family: 'Josefin Sans';
             background-color: #40916c;
@@ -147,14 +153,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #2d6a4f;
             color: black;
         }
-
         p {
             display: flex;
             justify-content: start;
             font-size: 20px;
             color: #40916c;
         }
-
         a {
             color: black;
             text-decoration: none;
@@ -165,104 +169,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 20px;
             color: #40916c;
         }
-
         .logo {
             width: 700px;
             margin: 50px;
-        }
-
-        @media screen and (max-width: 1800px) {
-    body {
-         margin-top: -50px;
-    }
-
-    .conteudo {
-        display:flex;
-        
-        
-    }
-
-    .logo {
-        width: 100%; 
-        margin: 80px;
-    }
-
-    img {
-        width: 500px; 
-        height: auto;
-    }
-
-    .inputs, select{
-        width:450px;
-        align-items: center;
-        height: auto;
-        padding:20px;
-    }
-
-    input {
-        width: 90%;
-    }
-
-    button {
-        width: 90%; 
-    }
-
-    h2 {
-        font-size: 50px;
-        width: auto;
-    }
-
-    h1 {
-        font-size: 30px; 
-    }
-
-    p, a {
-        font-size: 18px; 
-    }
-}
-
-
+        }   
     </style>
 </head>
 
 <body>
 
-<div class="conteudo">
-    <div class="logo">
-        <h2>Faça login no nosso site para acessar o conteúdo exclusivo!</h2>
-        <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="Logo">
+    <div class="conteudo">
+        <div class="logo">
+            <h2>Faça login no nosso site para acessar o conteúdo exclusivo!</h2>
+            <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="Logo">
+        </div>
+
+        <div class="inputs">
+            <form method="POST">
+                <h1>Cadastro de Usuário</h1>
+
+                <p>Nome</p>
+                <input type="text" name="nome" placeholder="Nome completo" required>
+
+                <p>Email</p>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <p>Senha</p>
+                <input type="password" name="senha" placeholder="Senha" required>
+
+                <p>Tipo de Usuário</p>
+                <select name="tipo" required>
+                    <option value="usuario">Usuário Comum</option>
+                </select>
+
+                <div class="botao">
+                    <button type="submit">Cadastrar</button>
+                </div>
+
+                <div class="botoes">
+                    <a href="index.php">Já tem uma conta? Faça login!</a>
+                </div>
+            </form>
+        </div>
     </div>
-  
-    <div class="inputs">
-        <form method="POST">
-            <h1>Cadastro de Usuário</h1>
 
-            <p>Nome</p>
-            <input type="text" name="nome" placeholder="Nome completo" required>
-
-            <p>Email</p>
-            <input type="email" name="email" placeholder="Email" required>
-
-            <p>Senha</p>
-            <input type="password" name="senha" placeholder="Senha" required>
-
-            <p>Tipo de Usuário</p>
-            <select name="tipo" required>
-                <option value="usuario">Usuário Comum</option>
-            </select>
-
-            <div class="botao">
-                <button type="submit">Cadastrar</button>
-            </div>
-
-            <div class="botoes">
-                <a href="index.php">Já tem uma conta? Faça login!</a>
-            </div>
-        </form>
-    </div>
-</div>
-
-<?php if (isset($erro)) echo "<p>$erro</p>"; ?>
+    <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
 
 </body>
+
 </html>
