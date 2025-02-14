@@ -153,12 +153,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #2d6a4f;
             color: black;
         }
+
         p {
             display: flex;
             justify-content: start;
             font-size: 20px;
             color: #40916c;
         }
+
         a {
             color: black;
             text-decoration: none;
@@ -169,10 +171,78 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 20px;
             color: #40916c;
         }
+
         .logo {
             width: 700px;
             margin: 50px;
-        }   
+        }
+
+        @media (max-width: 600px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 10px;
+            }
+
+            .conteudo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 24px;
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+           
+
+            .inputs {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            input,
+            select {
+                width: 300px;
+                font-size: 14px;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .botoes {
+                width: 100%;
+                text-align: center;
+            }
+
+            a {
+                font-size: 16px;
+                width: auto;
+            }
+
+            /* Esconder a imagem no mobile */
+            img {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -180,7 +250,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <div class="conteudo">
         <div class="logo">
-            <h2>Faça login no nosso site para acessar o conteúdo exclusivo!</h2>
+            <h2>Cadastre-se no nosso site!</h2>
             <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="Logo">
         </div>
 

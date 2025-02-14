@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 display: flex;
                 justify-content: space-around;
                 background-color: #1b4332;
-                height: 100px;
+                height: 150px;
                 gap: 550px;
                 align-items: center;
                 width: 100%;
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .titulo {
 
             color: white;
-            font-size: 20px;
+            font-size: 30px;
             margin-top: 30px;
             color: #081c15;
 
@@ -87,8 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .conteudo {
             background-color: #1b4332;
-            width: 800px;
-            height: 300px;
+            width: 1000px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -102,8 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             justify-content: space-between;
             gap: 90px;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 30px;
+            margin-top: 30px;
 
         }
 
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         a,
         h3 {
             text-decoration: none;
-            font-size: 20px;
+            font-size: 30px;
             color: white;
             padding: 20px;
         }
@@ -133,15 +133,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         label {
             color: white;
-            font-size: 18px;
+            font-size: 25px;
             margin: 20px;
 
 
         }
 
         button {
-            font-size: 20px;
-            height: 30px;
+            font-size: 30px;
+            height: 40px;
             border-radius: 10px;
             color: black;
             border: none;
@@ -157,8 +157,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input {
-            border-radius: 5px;
-            height: 20px;
+            border-radius: 10   px;
+            height: 30px;
+            
         }
     </style>
 </head>

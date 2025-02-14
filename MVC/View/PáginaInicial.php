@@ -24,7 +24,7 @@ if (isset($_GET['logout'])) {
 
         html,
         body {
-            margin: 0;
+            margin:  0 auto;
             padding: 0;
             font-family: 'Josefin Sans';
             background-color: #ffffff;
@@ -37,7 +37,7 @@ if (isset($_GET['logout'])) {
                 display: flex;
                 justify-content: space-around;
                 background-color: #1b4332;
-                height: 100px;
+                height: 150px;
                 gap: 550px;
                 align-items: center;
                 width: 100%;
@@ -46,8 +46,8 @@ if (isset($_GET['logout'])) {
         a {
             color: white;
             text-decoration: none;
-            font-size: 20px;
-            padding: 10px;
+            font-size: 30px;
+            padding: 20px;
             margin: 10px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
@@ -71,10 +71,7 @@ if (isset($_GET['logout'])) {
             margin: 10px;
         }
 
-        .conteudo {
-            padding: 20px;
-        }
-
+      
         li {
             font-size: 25px;
         }
@@ -86,6 +83,7 @@ if (isset($_GET['logout'])) {
 
         h3 {
             color: white;
+            font-size: 30px;
         }
 
         ul {
@@ -101,13 +99,9 @@ if (isset($_GET['logout'])) {
             justify-content: center;
             align-items: center;
             width: 100%;
+            margin: 0 auto;
             
 
-        }
-
-        .conteudo {
-            min-height: calc(100vh - 100px);
-            padding: 20px;
         }
 
         .texto1 {
@@ -145,14 +139,68 @@ if (isset($_GET['logout'])) {
 
             height: 190px;
         }
+        @media screen and (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+        text-align: center;
+    }
 
-        @media screen and (max-width: 1800px) {
+    .nav2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .navbar {
-                gap: 500px;
+    .nav2 a {
+        display: block;
+        padding: 8px;
+    }
 
-            }
-        }
+    .conteudo {
+        padding: 15px;
+    }
+
+    .texto1 {
+        width: 100%;
+    }
+
+    .texto1 p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .fundo {
+        height: 150px;
+        text-align: center;
+    }
+
+    .fundo h1 {
+        font-size: 26px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    li {
+        font-size: 18px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    footer img {
+        display: none; /* Oculta a logo para não ocupar espaço */
+    }
+}
+
     </style>
 </head>
 
