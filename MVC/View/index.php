@@ -193,7 +193,73 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin: 0 auto;
         }
 
-    
+        @media (max-width: 600px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 10px;
+            }
+            .logo{
+                display: flex;
+                justify-content: center;
+            }
+
+            .conteudo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 24px;
+                width: 500px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                display: none;
+            }
+
+            .inputs {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            input {
+                width: 100%;
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .botoes {
+                width: 100%;
+                text-align: center;
+            }
+
+            a {
+                font-size: 16px;
+                width: auto;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
     </style>
     <script>
         window.onload = function() {
