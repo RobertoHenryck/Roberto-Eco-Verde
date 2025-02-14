@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $consumo_de_equipamentos,
         $id_usuario
     );
-    
+
 
     if ($resultado) {
-        header('Location: PáginaInicial.php');
+        header('Location: listar.php');
         exit;
     } else {
         echo 'Erro ao cadastrar';
@@ -54,24 +54,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-           margin:0;
+            margin: 0;
             font-family: 'Josefin Sans';
             background-color: #fff;
             overflow: hidden;
         }
-        .navbar {
-            position: sticky;
-            z-index: 1000;
-            top: 0;
-            display: flex;
-            justify-content: space-around;
-            background-color: #1b4332;
-            height: 100px;
-            gap: 500px;
-            align-items: center;
-            width: 100%;
-        }
 
+        .navbar {
+                position: sticky;
+                z-index: 1000;
+                top: 0;
+                display: flex;
+                justify-content: space-around;
+                background-color: #1b4332;
+                height: 100px;
+                gap: 550px;
+                align-items: center;
+                width: 100%;
+            }
+            a:hover {
+            color: #2d6a4f;
+            transform: scale(1.1);
+        }
         .titulo {
 
             color: white;
@@ -90,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: space-around;
             border-radius: 40px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-            
+
 
         }
 
@@ -99,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: space-between;
             gap: 90px;
             padding: 20px;
-            margin-top:20px;
+            margin-top: 20px;
 
         }
 
@@ -110,11 +114,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
 
-        a, h3 {
+        a,
+        h3 {
             text-decoration: none;
             font-size: 20px;
-            color:white;
-           padding: 20px;
+            color: white;
+            padding: 20px;
         }
 
         .inputs2 {
@@ -136,24 +141,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         button {
             font-size: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            height: 30px;
             border-radius: 10px;
+            color: black;
+            border: none;
+            background-color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
 
 
         }
 
         button:hover {
-            background-color: rgb(162, 162, 162);
+            background-color: #2d6a4f;
             color: black;
         }
 
         input {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             border-radius: 5px;
             height: 20px;
         }
-        
     </style>
 </head>
 

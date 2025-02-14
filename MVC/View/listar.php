@@ -32,6 +32,7 @@
                 align-items: center;
                 margin: 0;
                 font-family: 'Josefin Sans', sans-serif;
+                transition: color 0.3s ease, transform 0.3s ease;
                 background-color: #fff;
             }
 
@@ -47,6 +48,10 @@
                 align-items: center;
                 width: 100%;
             }
+            a:hover {
+            color: #2d6a4f;
+            transform: scale(1.1);
+        }
 
             a,
             h3 {
@@ -130,7 +135,7 @@
         <th>Consumo de Equipamentos (kWh)</th>
         <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
             <th>Editar</th>
-            <th>Deletar</th> <!-- Coluna para deletar -->
+            <th>Deletar</th> 
         <?php } ?>
     </tr>
 </thead>

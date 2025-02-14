@@ -132,6 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
         }
 
 
@@ -145,6 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             justify-content: center;
             width: 400px;
             margin: 0 auto;
+            
         }
 
 

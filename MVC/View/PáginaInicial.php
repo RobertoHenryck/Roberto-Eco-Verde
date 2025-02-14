@@ -30,20 +30,19 @@ if (isset($_GET['logout'])) {
             background-color: #ffffff;
             height: 100%;
         }
-
         .navbar {
-            position: sticky;
-            z-index: 1000;
-            top: 0;
-            display: flex;
-            justify-content: space-around;
-            background-color: #1b4332;
-            height: 100px;
-            gap: 900px;
-            align-items: center;
-            
-        }
-
+                position: sticky;
+                z-index: 1000;
+                top: 0;
+                display: flex;
+                justify-content: space-around;
+                background-color: #1b4332;
+                height: 100px;
+                gap: 550px;
+                align-items: center;
+                width: 100%;
+            }
+        
         a {
             color: white;
             text-decoration: none;
@@ -102,6 +101,7 @@ if (isset($_GET['logout'])) {
             justify-content: center;
             align-items: center;
             width: 100%;
+            
 
         }
 
