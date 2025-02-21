@@ -11,6 +11,7 @@ if (isset($_GET['logout'])) {
     header('Location: index.php');
     exit;
 }
+$id_registro = $_GET['id'];
 
 $Controller = new Controller($pdo);
 
@@ -21,7 +22,7 @@ if (
     isset($_POST['update_consumo_do_servidor']) &&
     isset($_POST['update_consumo_de_iluminacao']) &&
     isset($_POST['update_consumo_de_climatizacao']) &&
-    isset($_POST['update_consumo_de_equipamentos'])
+    isset($_POST['update_consumo_de_equipamentos']) 
 ) {
 
     $Controller->editarConsumo(
@@ -30,7 +31,7 @@ if (
         $_POST['update_consumo_de_iluminacao'],
         $_POST['update_consumo_de_climatizacao'],
         $_POST['update_consumo_de_equipamentos'],
-        $_SESSION['usuario_id']
+        $id_registro
     );
 
     header("Location: listar.php");

@@ -20,9 +20,9 @@ class Controller
         return $this->Model->listarConsumo($usuario_id);
     }
 
-    public function editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos,$id_usuario )
+    public function editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos,$id_registro )
     {
-        $this->Model->editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos,$id_usuario);
+        $this->Model->editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos,$id_registro);
     }
 
     public function deletarConsumo($id)

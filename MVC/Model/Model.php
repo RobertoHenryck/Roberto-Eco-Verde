@@ -32,11 +32,11 @@ class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id_usuario)
+    public function editarConsumo($consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id_registro)
     {
-        $sql = "UPDATE cadastro_consumo SET consumo_de_estacao = ?, consumo_do_servidor = ?, consumo_de_iluminacao = ?, consumo_de_climatizacao = ?, consumo_de_equipamentos = ? WHERE id_usuario = ?";
+        $sql = "UPDATE cadastro_consumo SET consumo_de_estacao = ?, consumo_do_servidor = ?, consumo_de_iluminacao = ?, consumo_de_climatizacao = ?, consumo_de_equipamentos = ? WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id_usuario]);
+        $stmt->execute([$consumo_de_estacao, $consumo_do_servidor, $consumo_de_iluminacao, $consumo_de_climatizacao, $consumo_de_equipamentos, $id_registro]);
     }
 
     public function deletarConsumo($id)
