@@ -2,7 +2,16 @@
 require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php';
 require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller.php';
 
+
 session_start();
+
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
+
 
 if (isset($_GET['logout'])) {
     session_unset();
@@ -24,25 +33,31 @@ if (isset($_GET['logout'])) {
 
         html,
         body {
-            margin:  0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
             padding: 0;
-            font-family: 'Josefin Sans';
-            background-color: #ffffff;
-            height: 100%;
+            top: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            transition: color 0.3s ease, transform 0.3s ease;
+            background-color: #fff;
         }
+
         .navbar {
-                position: sticky;
-                z-index: 1000;
-                top: 0;
-                display: flex;
-                justify-content: space-around;
-                background-color: #1b4332;
-                height: 150px;
-                gap: 600px;
-                align-items: center;
-                width: 100%;
-            }
-        
+            position: sticky;
+            z-index: 1000;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1b4332;
+            height: 150px;
+            gap: 600px;
+            align-items: center;
+            width: 100%;
+        }
+
         a {
             color: white;
             text-decoration: none;
@@ -71,7 +86,7 @@ if (isset($_GET['logout'])) {
             margin: 10px;
         }
 
-      
+
         li {
             font-size: 25px;
         }
@@ -100,7 +115,7 @@ if (isset($_GET['logout'])) {
             align-items: center;
             width: 100%;
             margin: 0 auto;
-            
+
 
         }
 
@@ -133,74 +148,85 @@ if (isset($_GET['logout'])) {
             background-color: #1b4332;
             color: white;
             display: flex;
-            justify-content: space-between;
+            margin-top: 570;
+            justify-content: space-around;
             align-items: center;
-            padding: 10px;
-
-            height: 190px;
+            position: relative;
+            box-shadow: 2px 2px solid #1b4332;
+            width: 100%;
+            border: none;
+            height: 200px;
+            border-bottom: none;
+            margin: 0;
+            padding: 0;
         }
+        .feedback{
+          display: flex;
+        
+        }
+
         @media screen and (max-width: 800px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        gap: 10px;
-        padding: 10px;
-        text-align: center;
-    }
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+                padding: 10px;
+                text-align: center;
+            }
 
-    .nav2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+            .nav2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .nav2 a {
-        display: block;
-        padding: 8px;
-    }
+            .nav2 a {
+                display: block;
+                padding: 8px;
+            }
 
-    .conteudo {
-        padding: 15px;
-    }
+            .conteudo {
+                padding: 15px;
+            }
 
-    .texto1 {
-        width: 100%;
-    }
+            .texto1 {
+                width: 100%;
+            }
 
-    .texto1 p {
-        font-size: 18px;
-        text-align: center;
-    }
+            .texto1 p {
+                font-size: 18px;
+                text-align: center;
+            }
 
-    .fundo {
-        height: 150px;
-        text-align: center;
-    }
+            .fundo {
+                height: 150px;
+                text-align: center;
+            }
 
-    .fundo h1 {
-        font-size: 26px;
-    }
+            .fundo h1 {
+                font-size: 26px;
+            }
 
-    ul {
-        padding-left: 10px;
-    }
+            ul {
+                padding-left: 10px;
+            }
 
-    li {
-        font-size: 18px;
-    }
+            li {
+                font-size: 18px;
+            }
 
-    footer {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 20px;
-    }
+            footer {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding: 20px;
+            }
 
-    footer img {
-        display: none; /* Oculta a logo para não ocupar espaço */
-    }
-}
-
+            footer img {
+                display: none;
+                /* Oculta a logo para não ocupar espaço */
+            }
+        }
     </style>
 </head>
 
@@ -267,10 +293,18 @@ if (isset($_GET['logout'])) {
         </div>
     </div>
     <footer>
-        <div class="navbar">
+
+
+        <div class="texto">
             <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
+        </div>
+        <div class="feedback">
+            <a href="feedback.php">Feedback</a>
+        </div>
+        <div cl+ass="imagem">
             <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
         </div>
+
     </footer>
 
 </body>

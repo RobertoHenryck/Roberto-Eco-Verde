@@ -5,6 +5,11 @@ require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\MVC\Controller\Controller
 
 session_start();
 
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php");
+    exit;
+}
+
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();

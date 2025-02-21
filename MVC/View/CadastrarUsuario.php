@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php");
+    exit;
+}
 require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; // arquivo de conexão com o banco de dados
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -201,9 +206,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
+
             }
-           
+
 
             .inputs {
                 width: 100%;
