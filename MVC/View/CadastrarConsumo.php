@@ -61,21 +61,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .navbar {
-                position: sticky;
-                z-index: 1000;
-                top: 0;
-                display: flex;
-                justify-content: space-around;
-                background-color: #1b4332;
-                height: 150px;
-                gap: 550px;
-                align-items: center;
-                width: 100%;
-            }
-            a:hover {
+            position: sticky;
+            z-index: 1000;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1b4332;
+            height: 150px;
+            gap: 600px;
+            align-items: center;
+            width: 100%;
+        }
+
+        a:hover {
             color: #2d6a4f;
             transform: scale(1.1);
         }
+
         .titulo {
 
             color: white;
@@ -157,9 +159,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input {
-            border-radius: 10   px;
+            border-radius: 10 px;
             height: 30px;
-            
+
+        }
+
+        footer {
+            background-color: #1b4332;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            height: 190px;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 400px) {
+            body {
+                background-color: #1b4332;
+            }
+
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .titulo {
+                display: flex;
+                justify-content: center;
+                font-size: 15px;
+            }
+
+            .inputs1,
+            .inputs2 {
+                display: flex;
+                flex-direction: column;
+                width: 500px;
+
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+            }
+
+            .conteudo {
+                background-color: white;
+                box-shadow: none;
+                width: 500px;
+            }
         }
     </style>
 </head>
@@ -245,9 +299,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
         <br>
-
-        <a href="PáginaInicial.php">Voltar </a>
+        <div class="voltar">
+            <a href="PáginaInicial.php">Voltar </a>
+        </div>
     </center>
+
+    <footer>
+        <div class="navbar">
+            <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
+            <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
+        </div>
+    </footer>
 </body>
 
 </html>

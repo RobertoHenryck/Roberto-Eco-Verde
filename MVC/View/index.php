@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #1b4332;
             display: flex;
             width: 600px;
-            height: 400px;
+            height: 48  0px;
             justify-content: center;
             align-items: center;
             margin: 100px;
@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             justify-content: center;
             font-size: 30px;
+            padding-top:30px;
             color: #40916c;
         }
 
@@ -114,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 50px;
             text-align: center;
         }
 
@@ -149,12 +150,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #40916c;
         }
 
-        /* Remover completamente a borda de foco invisível no link */
+        
         a:focus {
             outline: none;
-            /* Remove o outline do foco no link */
             border: none;
-            /* Remove qualquer borda que possa aparecer */
+            
         }
 
         .logo {

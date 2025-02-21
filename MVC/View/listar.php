@@ -18,6 +18,7 @@
 
     <!DOCTYPE html>
     <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,9 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin: 0;
+                margin: 0 auto;
+                padding:0;
+                top: 0;
                 font-family: 'Josefin Sans', sans-serif;
                 transition: color 0.3s ease, transform 0.3s ease;
                 background-color: #fff;
@@ -43,41 +46,58 @@
                 display: flex;
                 justify-content: space-around;
                 background-color: #1b4332;
-                height: 100px;
-                gap: 550px;
+                height: 150px;
+                gap: 600px;
                 align-items: center;
                 width: 100%;
             }
+
             a:hover {
-            color: #2d6a4f;
-            transform: scale(1.1);
-        }
+                color: #2d6a4f;
+                transform: scale(1.1);
+            }
 
             a,
             h3 {
                 color: white;
                 text-decoration: none;
                 padding: 20px;
-                font-size: 20px;
+
+            }
+
+            h3,
+            a {
+                font-size: 30px;
+            }
+
+            h1 {
+                font-size: 50px;
             }
 
             table {
-                width: 1000px;
+                width: 90%;
                 border-collapse: collapse;
                 margin-top: 20px;
+                border: none;
+                padding: 20px;
+                margin: 0 auto;
+
             }
 
             .tabela {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+
             }
 
             th,
             td {
                 border: 1px solid black;
-                padding: 10px;
+                padding: 20px;
                 text-align: center;
+                font-size: 20px;
             }
 
             th {
@@ -86,19 +106,40 @@
             }
 
             .botoes {
-                margin-top: 20px;
+                margin-top: 50px;
                 display: flex;
                 justify-content: center;
+                width: 400px;
+                font-size: 30px;
+                margin: 0 auto;
             }
 
             .botoes a {
                 display: inline-block;
-                margin: 10px;
+                margin: 20px;
                 padding: 10px;
+                margin-top: 50px;
                 background-color: #1b4332;
                 color: white;
                 text-decoration: none;
                 border-radius: 5px;
+            }
+
+            footer {
+                background-color: #1b4332;
+                color: white;
+                display: flex;
+                margin-top: 500;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                box-shadow: 2px 2px solid #1b4332 ;
+                width: 100%;
+                border:none;
+                height: 200px;
+                border-bottom: none;
+                margin: 0;
+                padding: 0;
             }
         </style>
     </head>
@@ -125,40 +166,40 @@
                 <?php if (!empty($Consumos)): ?>
                     <table>
                         <thead>
-                        <thead>
-    <tr>
-        <th>ID</th>
-        <th>Consumo da Estação (kWh)</th>
-        <th>Consumo do Servidor (kWh)</th>
-        <th>Consumo de Iluminação (kWh)</th>
-        <th>Consumo de Climatização (kWh)</th>
-        <th>Consumo de Equipamentos (kWh)</th>
-        <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
-            <th>Editar</th>
-            <th>Deletar</th> 
-        <?php } ?>
-    </tr>
-</thead>
-<tbody>
-    <?php foreach ($Consumos as $Consumo): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($Consumo['id']); ?></td>
-            <td><?php echo htmlspecialchars($Consumo['consumo_de_estacao']); ?></td>
-            <td><?php echo htmlspecialchars($Consumo['consumo_do_servidor']); ?></td>
-            <td><?php echo htmlspecialchars($Consumo['consumo_de_iluminacao']); ?></td>
-            <td><?php echo htmlspecialchars($Consumo['consumo_de_climatizacao']); ?></td>
-            <td><?php echo htmlspecialchars($Consumo['consumo_de_equipamentos']); ?></td>
-            <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
-                <td>
-                    <a href='editar.php?id=<?php echo htmlspecialchars($Consumo['id']); ?>'>✏️</a>
-                </td>
-                <td>
-                    <a href="deletar.php?id=<?php echo htmlspecialchars($Consumo['id']); ?>" onclick="return confirm('Tem certeza que deseja deletar este consumo?')">❌</a>
-                </td>
-            <?php } ?>
-        </tr>
-    <?php endforeach; ?>
-</tbody>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Consumo da Estação (kWh)</th>
+                                    <th>Consumo do Servidor (kWh)</th>
+                                    <th>Consumo de Iluminação (kWh)</th>
+                                    <th>Consumo de Climatização (kWh)</th>
+                                    <th>Consumo de Equipamentos (kWh)</th>
+                                    <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
+                                        <th>Editar</th>
+                                        <th>Deletar</th>
+                                    <?php } ?>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            <?php foreach ($Consumos as $Consumo): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($Consumo['id']); ?></td>
+                                    <td><?php echo htmlspecialchars($Consumo['consumo_de_estacao']); ?></td>
+                                    <td><?php echo htmlspecialchars($Consumo['consumo_do_servidor']); ?></td>
+                                    <td><?php echo htmlspecialchars($Consumo['consumo_de_iluminacao']); ?></td>
+                                    <td><?php echo htmlspecialchars($Consumo['consumo_de_climatizacao']); ?></td>
+                                    <td><?php echo htmlspecialchars($Consumo['consumo_de_equipamentos']); ?></td>
+                                    <?php if ($_SESSION['usuario_tipo'] == 'admin') { ?>
+                                        <td>
+                                            <a href='editar.php?id=<?php echo htmlspecialchars($Consumo['id']); ?>'>✏️</a>
+                                        </td>
+                                        <td>
+                                            <a href="deletar.php?id=<?php echo htmlspecialchars($Consumo['id']); ?>" onclick="return confirm('Tem certeza que deseja deletar este consumo?')">❌</a>
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
 
                     </table>
                     <div class="botoes">
@@ -169,6 +210,13 @@
                 <?php endif; ?>
             </div>
         </div>
+        <footer>
+            <div class="navbar">
+                <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
+                <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
+            </div>
+        </footer>
+
     </body>
 
     </html>

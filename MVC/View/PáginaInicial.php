@@ -38,7 +38,7 @@ if (isset($_GET['logout'])) {
                 justify-content: space-around;
                 background-color: #1b4332;
                 height: 150px;
-                gap: 550px;
+                gap: 600px;
                 align-items: center;
                 width: 100%;
             }
@@ -47,7 +47,7 @@ if (isset($_GET['logout'])) {
             color: white;
             text-decoration: none;
             font-size: 30px;
-            padding: 20px;
+            padding: 10px;
             margin: 10px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
@@ -271,6 +271,7 @@ if (isset($_GET['logout'])) {
             <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
             <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
         </div>
+    </footer>
 
 </body>
 
