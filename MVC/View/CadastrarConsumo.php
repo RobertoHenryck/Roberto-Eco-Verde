@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: space-around;
             background-color: #1b4332;
             height: 150px;
-            gap: 600px;
+            gap: 550px;
             align-items: center;
             width: 100%;
         }

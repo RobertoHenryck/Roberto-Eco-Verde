@@ -36,7 +36,7 @@
                 justify-content: center;
                 align-items: center;
                 margin: 0 auto;
-                padding:0;
+                padding: 0;
                 top: 0;
                 font-family: 'Josefin Sans', sans-serif;
                 transition: color 0.3s ease, transform 0.3s ease;
@@ -130,20 +130,17 @@
             }
 
             footer {
-                background-color: #1b4332;
-                color: white;
+                position: sticky;
+                z-index: 1000;
+                top: 0;
                 display: flex;
-                margin-top: 500;
-                justify-content: space-between;
-                align-items: center;
-                position: relative;
-                box-shadow: 2px 2px solid #1b4332 ;
-                width: 100%;
-                border:none;
+                justify-content: space-around;
+                background-color: #1b4332;
                 height: 200px;
-                border-bottom: none;
-                margin: 0;
-                padding: 0;
+                gap: 600px;
+                align-items: center;
+                width: 100%;
+                margin-top: 120px;
             }
         </style>
     </head>
@@ -215,10 +212,10 @@
             </div>
         </div>
         <footer>
-            <div class="navbar">
-                <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
-                <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
-            </div>
+
+            <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
+            <img src="../../IMG/LOGO ROBERTO ÉCO VERDE.png" alt="">
+
         </footer>
 
     </body>

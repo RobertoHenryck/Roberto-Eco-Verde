@@ -53,7 +53,7 @@ if (isset($_GET['logout'])) {
             justify-content: space-around;
             background-color: #1b4332;
             height: 150px;
-            gap: 600px;
+            gap: 400px;
             align-items: center;
             width: 100%;
         }

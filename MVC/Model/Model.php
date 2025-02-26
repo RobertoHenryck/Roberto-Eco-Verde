@@ -46,4 +46,29 @@ class Model
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
+
+    public function cadastrarfeedback($nome, $feedback, $email, $usuario_id)
+    {
+        $sql = "INSERT INTO feedback (nome, feedback, email, usuario_id) 
+                VALUES (:nome, :feedback, :email, :usuario_id)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":feedback", $feedback);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":usuario_id", $usuario_id);  // Aqui associamos o feedback ao usuário
+        return $stmt->execute();
+    }
+    
+
+    
+    public function listarfeedback($usuario_id)
+    {
+        $sql = "SELECT * FROM feedback WHERE usuario_id = ?";  // Filtra pelo usuário
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$usuario_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+
+        
 }
