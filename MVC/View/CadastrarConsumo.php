@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin: 0;
             font-family: 'Josefin Sans';
             background-color: #fff;
-            overflow: hidden;
+      
         }
 
         .navbar {
@@ -181,44 +181,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 100%;
         }
 
-        @media screen and (max-width: 400px) {
-            body {
-                background-color: #1b4332;
-            }
+        @media screen and (max-width: 600px) {
+            @media screen and (max-width: 768px) {
+                .navbar {
 
-            .navbar {
-                flex-direction: column;
-                height: auto;
-                gap: 10px;
-                padding: 10px;
-                width: 100%;
-                text-align: center;
-            }
+                    flex-direction: column;
+                    height: auto;
+                    gap: 10px;
+                    padding: 10px;
+                    text-align: center;
+                    width: 100%;
+                    position: relative;
+                }
 
-            .titulo {
-                display: flex;
-                justify-content: center;
-                font-size: 15px;
-            }
+                .titulo {
+                    font-size: 20px;
+                    text-align: center;
+                }
 
-            .inputs1,
-            .inputs2 {
-                display: flex;
-                flex-direction: column;
-                width: 500px;
+                .conteudo {
+                    width: 90%;
+                    height: auto;
+                    padding: 20px;
+                    flex-direction: column;
+                }
 
-            }
+                form {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    gap: 20px;
+                }
 
-            form {
-                display: flex;
-                flex-direction: column;
-                background-color: white;
-            }
+                .inputs1,
+                .inputs2 {
+                    width: 100%;
+                    gap: 15px;
+                }
 
-            .conteudo {
-                background-color: white;
-                box-shadow: none;
-                width: 500px;
+                input {
+                    width: 100%;
+                }
+
+                .botaoVoltar {
+                    text-align: center;
+                }
+
+                footer {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 15px;
+                    height: auto;
+                }
             }
         }
     </style>

@@ -41,4 +41,5 @@ class Controller
         $usuario_id = $_SESSION['usuario_id'];  // Obtém o ID do usuário da sessão
         return $this->Model->listarfeedback($usuario_id);
     }
+    
 }

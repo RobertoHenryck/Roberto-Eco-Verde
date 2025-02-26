@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #1b4332;
             display: flex;
             width: 600px;
-            height: 48  0px;
+            height: 48 0px;
             justify-content: center;
             align-items: center;
             margin: 100px;
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             justify-content: center;
             font-size: 30px;
-            padding-top:30px;
+            padding-top: 30px;
             color: #40916c;
         }
 
@@ -150,11 +150,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #40916c;
         }
 
-        
+
         a:focus {
             outline: none;
             border: none;
-            
+
         }
 
         .logo {
@@ -196,15 +196,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         @media (max-width: 600px) {
             body {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
-                align-items: center;
                 min-height: 100vh;
+                width: 100vw;
                 margin: 0;
                 padding: 10px;
+                overflow: hidden;
             }
-            .logo{
+
+            .logo {
                 display: flex;
                 justify-content: center;
+                width: 100%;
             }
 
             .conteudo {
@@ -212,12 +216,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 align-items: center;
                 text-align: center;
                 width: 100%;
+                display: flex;
             }
 
             h2 {
-                font-size: 24px;
-                width: 500px;
-                padding: 10px;
+                font-size: 1em;
+                width: 100vw;
                 display: flex;
                 justify-content: center;
             }

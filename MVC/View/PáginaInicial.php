@@ -53,7 +53,7 @@ if (isset($_GET['logout'])) {
             justify-content: space-around;
             background-color: #1b4332;
             height: 150px;
-            gap: 400px;
+            gap:500px;
             align-items: center;
             width: 100%;
         }
@@ -298,6 +298,7 @@ if (isset($_GET['logout'])) {
         <div class="texto">
             <h3>ROBERTO ÉCO VERDE - ©Todos os direitos reservados</h3>
         </div>
+        
         <div class="feedback">
             <a href="feedback.php">Feedback</a>
         </div>
