@@ -67,16 +67,18 @@ if (
     }
 
     .navbar {
-    
-        top: 0;
-        display: flex;
-        justify-content: space-around;
-        background-color: #1b4332;
-        height: 100px;
-        gap: 550px;
-        align-items: center;
-        width: 100%;
-    }
+                position: sticky;
+                z-index: 1000;
+                top: 0;
+                display: flex;
+                justify-content: space-around;
+                background-color: #1b4332;
+                height: 150px;
+                gap: 600px;
+                align-items: center;
+                width: 100%;
+            }
+
 
     a:hover {
         color: #2d6a4f;
@@ -135,7 +137,7 @@ if (
     h3 {
 
         text-decoration: none;
-        font-size: 20px;
+        font-size: 30px;
         color: white;
         padding: 20px;
     }
