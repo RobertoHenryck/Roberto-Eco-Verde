@@ -2,13 +2,12 @@
 session_start();
 
 
-require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; // arquivo de conexão com o banco de dados
-
+require_once 'C:\Turma2\xampp\htdocs\ROBERTO-ECO-VERDE\config.php'; 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $tipo = $_POST['tipo']; // Tipo de usuário
+    $tipo = $_POST['tipo']; 
 
     if (isset($_GET['logout'])) {
         session_unset();
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    // Verificar se o email já está cadastrado
     $sql = "SELECT * FROM usuarios WHERE email = :email LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email', $email);
@@ -26,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->rowCount() > 0) {
         $erro = "Este email já está cadastrado!";
     } else {
-        // Criptografar a senha
+      
         $senha_criptografada = password_hash($senha, PASSWORD_DEFAULT);
 
-        // Inserir o novo usuário no banco de dados
+   
         $sql = "INSERT INTO usuarios (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
@@ -42,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['usuario_email'] = $email;
             $_SESSION['usuario_tipo'] = $tipo;
 
-            // Redireciona para a página inicial
+        
             header('Location: index.php');
             exit;
         } else {
