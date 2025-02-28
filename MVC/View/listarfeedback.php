@@ -213,7 +213,7 @@ $Feedbacks = $Controller->listarFeedback($_SESSION['usuario_id']);
                 </table>
 
                 <div class="botoes">
-                    <a href="CadastrarFeedback.php">Escreva um feedback</a>
+                    <a href="feedback.php">Escreva um feedback</a>
                 </div>
             <?php else: ?>
                 <p>Nenhum feedback registrado</p>
