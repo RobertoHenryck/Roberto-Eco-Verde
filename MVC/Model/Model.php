@@ -55,19 +55,20 @@ class Model
         $stmt->bindParam(":nome", $nome);
         $stmt->bindParam(":feedback", $feedback);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":usuario_id", $usuario_id);  // Aqui associamos o feedback ao usuário
+        $stmt->bindParam(":usuario_id", $usuario_id);  
         return $stmt->execute();
     }
     
 
     
-    public function listarfeedback($usuario_id)
+    public function listarfeedback()
     {
-        $sql = "SELECT * FROM feedback WHERE usuario_id = ?";  // Filtra pelo usuário
+        $sql = "SELECT * FROM feedback";  
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$usuario_id]);
+        $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
     
 
         

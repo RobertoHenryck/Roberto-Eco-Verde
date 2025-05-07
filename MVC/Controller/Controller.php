@@ -32,14 +32,14 @@ class Controller
 
     public function cadastrarfeedback($nome, $feedback, $email)
     {
-        $usuario_id = $_SESSION['usuario_id'];  // Obtém o ID do usuário da sessão
+        $usuario_id = $_SESSION['usuario_id'];
         return $this->Model->cadastrarfeedback($nome, $feedback, $email, $usuario_id);
     }
 
     public function listarfeedback()
     {
-        $usuario_id = $_SESSION['usuario_id'];  // Obtém o ID do usuário da sessão
-        return $this->Model->listarfeedback($usuario_id);
+        return $this->Model->listarfeedback();
     }
+    
     
 }

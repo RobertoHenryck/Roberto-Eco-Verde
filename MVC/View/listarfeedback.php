@@ -17,7 +17,8 @@ if (isset($_GET['logout'])) {
 }
 
 $Controller = new Controller($pdo);
-$Feedbacks = $Controller->listarFeedback($_SESSION['usuario_id']);
+$Feedbacks = $Controller->listarfeedback();
+
 ?>
 
 <!DOCTYPE html>
